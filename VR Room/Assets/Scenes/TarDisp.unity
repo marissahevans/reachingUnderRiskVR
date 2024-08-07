@@ -1577,6 +1577,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tarPos: {x: 0, y: 0, z: 0}
   penaltyPos: {x: 0, y: 0, z: 0}
+  reachEndpt: {x: 0, y: 0, z: 0}
   trial: 0
 --- !u!4 &2015576888
 Transform:

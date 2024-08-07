@@ -22,10 +22,9 @@ public class penaltyPos : MonoBehaviour
         transform.position = new Vector3(
             -1.8F,
             1,
-            GameManager.Instance.TarPos[3] + shift);
+            GameManager.Instance.TarPos[2] + shift);
             GameManager.Instance.PenaltyPos =
                 new Vector3(transform.position[0], transform.position[1], transform.position[2]);
-     
         
         //create field of dots for target
         int Size = 1000;     //Number of objects

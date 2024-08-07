@@ -6766,7 +6766,7 @@ IL_0018:
 		// transform.position = new Vector3(
 		//     -1.8F,
 		//     1,
-		//     GameManager.Instance.TarPos[3] + shift);
+		//     GameManager.Instance.TarPos[2] + shift);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_1;
 		L_1 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
 		GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6* L_2 = ((GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6_StaticFields*)il2cpp_codegen_static_fields_for(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6_il2cpp_TypeInfo_var))->___Instance_4;
@@ -6775,7 +6775,7 @@ IL_0018:
 		L_3 = GameManager_get_TarPos_mA822BFEC0BA157260C12A93B65AE7627ADFE2825_inline(L_2, NULL);
 		V_3 = L_3;
 		float L_4;
-		L_4 = Vector3_get_Item_m163510BFC2F7BFAD1B601DC9F3606B799CF199F2_inline((&V_3), 3, NULL);
+		L_4 = Vector3_get_Item_m163510BFC2F7BFAD1B601DC9F3606B799CF199F2_inline((&V_3), 2, NULL);
 		float L_5 = V_0;
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_6;
 		memset((&L_6), 0, sizeof(L_6));
