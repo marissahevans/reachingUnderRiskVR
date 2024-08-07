@@ -28,8 +28,11 @@ public class handPosCheck : MonoBehaviour
             GameManager.Instance.ReachEndpt = new Vector3(currentPos[0], currentPos[1], currentPos[2]);
             SceneManager.LoadScene("StartingRoom"); 
         }
-
-        startPos = currentPos;
+        else
+        {
+            startPos = currentPos;
+        }
+        
     }
     
 }

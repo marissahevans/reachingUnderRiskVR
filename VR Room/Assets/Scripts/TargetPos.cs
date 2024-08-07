@@ -9,17 +9,17 @@ public class TargetPos : MonoBehaviour
     void Start()
     {
         List<float> tarLocY = new List<float>();
-        tarLocY.Add(.5F);
+        tarLocY.Add(.6F);
         tarLocY.Add(1);
-        tarLocY.Add(1.5F);
+        tarLocY.Add(1.4F);
         
         List<float> tarLocZ = new List<float>();
-        tarLocZ.Add(1);
+        tarLocZ.Add(.5F);
         tarLocZ.Add(0);
-        tarLocZ.Add(-1);
+        tarLocZ.Add(-.5F);
 
         transform.position = new Vector3(
-            -1.5F,
+            -1.8F,
             tarLocY[Random.Range(0, tarLocY.Count)],
             tarLocZ[Random.Range(0, tarLocZ.Count)]);
         GameManager.Instance.TarPos = new Vector3(transform.position[0], transform.position[1], transform.position[2]);
@@ -34,7 +34,7 @@ public class TargetPos : MonoBehaviour
             dots[i] = GameObject.Instantiate (Resources.Load ("SphereTarget")) as GameObject;  
 
             //Position it in the scene
-            dots[i].transform.position = (Random.insideUnitSphere * .1F) + GameManager.Instance.TarPos;
+            dots[i].transform.position = (Random.insideUnitSphere * .05F) + GameManager.Instance.TarPos;
         }
     }
 

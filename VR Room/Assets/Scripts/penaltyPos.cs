@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -13,17 +12,17 @@ public class penaltyPos : MonoBehaviour
         int penSide = Random.Range(-1, 1);
         if (penSide >= 0)
         {
-            shift = .1F;
+            shift = .08F;
         }
         else
         {
-            shift = -.1F;
+            shift = -.08F;
         }
         
         transform.position = new Vector3(
-            -1,
+            -1.8F,
             1,
-            GameManager.Instance.TarPos[2] + shift);
+            GameManager.Instance.TarPos[3] + shift);
             GameManager.Instance.PenaltyPos =
                 new Vector3(transform.position[0], transform.position[1], transform.position[2]);
      
@@ -38,7 +37,7 @@ public class penaltyPos : MonoBehaviour
             dots[i] = GameObject.Instantiate (Resources.Load ("SpherePenalty")) as GameObject;  
 
             //Position it in the scene
-            dots[i].transform.position = new Vector3(Random.Range(-1.0F,1.0F),Random.Range(-1.0F,1.0F),Random.Range(0.0F,0.1F)+shift) + GameManager.Instance.TarPos;
+            dots[i].transform.position = new Vector3(Random.Range(-0.5F,0.5F),Random.Range(-1.0F,1.0F),Random.Range(-0.05F,0.05F)+shift) + GameManager.Instance.TarPos;
         }
     }
    
