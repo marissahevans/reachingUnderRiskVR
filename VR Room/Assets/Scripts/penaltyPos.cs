@@ -9,23 +9,36 @@ public class penaltyPos : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (Random.Range(-1,1) > 0)
+        float shift;
+        int penSide = Random.Range(-1, 1);
+        if (penSide >= 0)
         {
-            transform.position = new Vector3(
-                -1,
-                1,
-                GameManager.Instance.TarPos[2] - .2F);
-            GameManager.Instance.PenaltyPos =
-                new Vector3(transform.position[0], transform.position[1], transform.position[2]);
+            shift = .1F;
         }
         else
         {
-            transform.position = new Vector3(
-                -1,
-                1,
-                GameManager.Instance.TarPos[2] + .2F);
+            shift = -.1F;
+        }
+        
+        transform.position = new Vector3(
+            -1,
+            1,
+            GameManager.Instance.TarPos[2] + shift);
             GameManager.Instance.PenaltyPos =
                 new Vector3(transform.position[0], transform.position[1], transform.position[2]);
+     
+        
+        //create field of dots for target
+        int Size = 1000;     //Number of objects
+        GameObject[] dots = new GameObject[Size];
+        //Loop for the entire size of the array, 10 in this case
+        for (int i = 0; i < Size; i++)
+        {
+            //Create the game object
+            dots[i] = GameObject.Instantiate (Resources.Load ("SpherePenalty")) as GameObject;  
+
+            //Position it in the scene
+            dots[i].transform.position = new Vector3(Random.Range(-1.0F,1.0F),Random.Range(-1.0F,1.0F),Random.Range(0.0F,0.1F)+shift) + GameManager.Instance.TarPos;
         }
     }
    

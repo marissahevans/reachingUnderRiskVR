@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     public Vector3 tarPos;
 
     public Vector3 penaltyPos;
+
+    public Vector3 reachEndpt;
     
     public int trial = 0;
     
@@ -32,6 +34,13 @@ public class GameManager : MonoBehaviour
     {
         get { return penaltyPos; }
         set { penaltyPos = value; }
+    }
+    
+    // Setting up public update for reach postion
+    public Vector3 ReachEndpt
+    {
+        get { return reachEndpt; }
+        set { reachEndpt = value; }
     }
     
     // save GameManager as a singleton on load

@@ -23,6 +23,19 @@ public class TargetPos : MonoBehaviour
             tarLocY[Random.Range(0, tarLocY.Count)],
             tarLocZ[Random.Range(0, tarLocZ.Count)]);
         GameManager.Instance.TarPos = new Vector3(transform.position[0], transform.position[1], transform.position[2]);
+        
+        //create field of dots for target
+        int Size = 100;     //Number of objects
+        GameObject[] dots = new GameObject[Size];
+            //Loop for the entire size of the array, 10 in this case
+        for (int i = 0; i < Size; i++)
+        {
+            //Create the game object
+            dots[i] = GameObject.Instantiate (Resources.Load ("SphereTarget")) as GameObject;  
+
+            //Position it in the scene
+            dots[i].transform.position = (Random.insideUnitSphere * .1F) + GameManager.Instance.TarPos;
+        }
     }
 
     // Update is called once per frame
