@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.VersionControl;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -8,6 +9,10 @@ public class penaltyPos : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        int blockNum = GameManager.Instance.Block;
+        int penDir = GameManager.Instance.penMode[blockNum];
+        Debug.Log("block = "+ blockNum);
+        Debug.Log("direction = "+ penDir);
         float shift;
         int penSide = Random.Range(-1, 1);
         if (penSide >= 0)
@@ -33,10 +38,24 @@ public class penaltyPos : MonoBehaviour
         for (int i = 0; i < Size; i++)
         {
             //Create the game object
-            dots[i] = GameObject.Instantiate (Resources.Load ("SpherePenalty")) as GameObject;  
+            dots[i] = GameObject.Instantiate (Resources.Load ("SpherePenalty")) as GameObject;
+            if (penDir == 1)
+            {
+                //Position it in the scene
+                dots[i].transform.position = new Vector3(Random.Range(-0.05F,0.05F)+shift,Random.Range(-1.0F,1.0F),Random.Range(-1.0F,1.0F)) + GameManager.Instance.TarPos; 
+            }
 
-            //Position it in the scene
-            dots[i].transform.position = new Vector3(Random.Range(-0.5F,0.5F),Random.Range(-1.0F,1.0F),Random.Range(-0.05F,0.05F)+shift) + GameManager.Instance.TarPos;
+            if (penDir == 2)
+            {
+                //Position it in the scene
+                dots[i].transform.position = new Vector3(Random.Range(-0.5F,0.5F),Random.Range(-0.05F,0.05F)+shift,Random.Range(-1.0F,1.0F)) + GameManager.Instance.TarPos;
+            }
+
+            if (penDir == 3)
+            {
+                //Position it in the scene
+                dots[i].transform.position = new Vector3(Random.Range(-0.5F,0.5F),Random.Range(-1.0F,1.0F),Random.Range(-0.05F,0.05F)+shift) + GameManager.Instance.TarPos; 
+            }
         }
     }
    

@@ -5,11 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class startButton : MonoBehaviour
 {
+    private IEnumerator WaitForSceneLoad()
+    {
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene("TarDisp");
+    }
+
     void OnTriggerEnter(Collider other)
     {
         Debug.Log("You started the trial");
         GameManager.Instance.Trial++;
-        SceneManager.LoadScene("TarDisp");
+        StartCoroutine(WaitForSceneLoad());
         Debug.Log("Trial:" + GameManager.Instance.Trial);
     }
 }
