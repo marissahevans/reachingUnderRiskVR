@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class startButton : MonoBehaviour
 {
+    
     private IEnumerator WaitForSceneLoad()
     {
         yield return new WaitForSeconds(1);

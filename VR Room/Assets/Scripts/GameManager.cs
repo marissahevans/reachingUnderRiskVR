@@ -12,9 +12,13 @@ public class GameManager : MonoBehaviour
 
     public Vector3 tarPos;
 
-    public Vector3 penaltyPos;
+    public Bounds penaltyPos;
 
     public Vector3 reachEndpt;
+
+    public Vector3 startPos = new Vector3(-1.8F,.7F,0);
+
+    public float tarSize = .05F;
     
     public int trial = 0;
 
@@ -51,8 +55,8 @@ public class GameManager : MonoBehaviour
         set { tarPos = value; }
     }
     
-    // Setting up public update for target postion
-    public Vector3 PenaltyPos
+    // Setting up public update for penalty postion
+    public Bounds PenaltyPos
     {
         get { return penaltyPos; }
         set { penaltyPos = value; }

@@ -6,6 +6,7 @@ using Random = UnityEngine.Random;
 
 public class penaltyPos : MonoBehaviour
 {
+    public Bounds penBound;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,22 +24,36 @@ public class penaltyPos : MonoBehaviour
         {
             shift = -.08F;
         }
+
+        if (penDir == 1)
+        {
+            Bounds penBound = new Bounds(GameManager.Instance.TarPos + new Vector3(shift,0,0), new Vector3(.1F, 2, 2));
+            GameManager.Instance.PenaltyPos = penBound;
+        }
+        if (penDir == 2)
+        {
+            Bounds penBound = new Bounds(GameManager.Instance.TarPos + new Vector3(0,shift,0), new Vector3(1, .1F, 2));
+            GameManager.Instance.PenaltyPos = penBound;
+        }
+        if (penDir == 3)
+        {
+            Bounds penBound = new Bounds(GameManager.Instance.TarPos + new Vector3(0,0,shift), new Vector3(1, 2, .1F));
+            GameManager.Instance.PenaltyPos = penBound;
+        }
         
-        transform.position = new Vector3(
-            -1.8F,
-            1,
-            GameManager.Instance.TarPos[2] + shift);
-            GameManager.Instance.PenaltyPos =
-                new Vector3(transform.position[0], transform.position[1], transform.position[2]);
-        
+        Debug.Log(GameManager.Instance.PenaltyPos);
+        Debug.Log(GameManager.Instance.TarPos);
+
         //create field of dots for target
-        int Size = 1000;     //Number of objects
+        int Size = 10000;     //Number of objects
         GameObject[] dots = new GameObject[Size];
-        //Loop for the entire size of the array, 10 in this case
+        
+        //Loop for the entire size of the array
         for (int i = 0; i < Size; i++)
         {
             //Create the game object
             dots[i] = GameObject.Instantiate (Resources.Load ("SpherePenalty")) as GameObject;
+            
             if (penDir == 1)
             {
                 //Position it in the scene
@@ -57,6 +72,8 @@ public class penaltyPos : MonoBehaviour
                 dots[i].transform.position = new Vector3(Random.Range(-0.5F,0.5F),Random.Range(-1.0F,1.0F),Random.Range(-0.05F,0.05F)+shift) + GameManager.Instance.TarPos; 
             }
         }
+
+       // GameObject[] penSpheres = GameObject.FindGameObjectsWithTag("penalty");
     }
    
 

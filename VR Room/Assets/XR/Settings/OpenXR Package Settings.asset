@@ -258,6 +258,7 @@ MonoBehaviour:
   - {fileID: -8839309146186829114}
   - {fileID: -6835621409009650533}
   - {fileID: 7398921005798238389}
+  - {fileID: 3254809254797011585}
   - {fileID: 3128996249378202262}
   - {fileID: 1705735422502638424}
   - {fileID: -1947423836121269540}
@@ -341,7 +342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: feeef8d85de8db242bdda70cc7ff5acd, type: 3}
   m_Name: OculusTouchControllerProfile Android
   m_EditorClassIdentifier: 
-  m_enabled: 0
+  m_enabled: 1
   nameUi: Oculus Touch Controller Profile
   version: 0.0.1
   featureIdInternal: com.unity.openxr.feature.input.oculustouch
@@ -403,6 +404,26 @@ MonoBehaviour:
   featureIdInternal: com.unity.openxr.feature.input.khrsimpleprofile
   openxrExtensionStrings: 
   company: Unity
+  priority: 0
+  required: 0
+--- !u!114 &3254809254797011585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78ab78586c10ef544a7086ea0dcdcf46, type: 3}
+  m_Name: HtcViveCosmosInputFeature Standalone
+  m_EditorClassIdentifier: 
+  m_enabled: 0
+  nameUi: HTC Vive Cosmos Controller Support
+  version: 0.0.1
+  featureIdInternal: com.htc.openxr.feature.input.htcvivecosmos
+  openxrExtensionStrings: 
+  company: HTC
   priority: 0
   required: 0
 --- !u!114 &3466697353013665970
