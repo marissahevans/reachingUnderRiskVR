@@ -3,6 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using Unity.Mathematics;
+// From the internet. Work around for the argument exception 
+#if USE_INPUT_SYSTEM_POSE_CONTROL
+using PoseControl = UnityEngine.InputSystem.XR.PoseControl;
+#else
+using PoseControl = UnityEngine.XR.OpenXR.Input.PoseControl;
+#endif
 
 public class GameManager : MonoBehaviour
 {
@@ -26,6 +32,7 @@ public class GameManager : MonoBehaviour
     public List<int> penMode = new List<int> { 3, 2, 1, 3, 2, 1 };
 
     public int points = 0;
+    
     
     // setting up public update for trials
     public int Trial

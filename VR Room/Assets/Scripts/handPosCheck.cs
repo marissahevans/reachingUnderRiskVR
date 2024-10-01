@@ -40,6 +40,8 @@ public class handPosCheck : MonoBehaviour
                 otherscript.performReward();
                 //SceneManager.LoadScene("StartingRoom");
         }
+
+        lastPosition = pose.transform.position;
     }
 
    // public Vector3 GetVelocity()
